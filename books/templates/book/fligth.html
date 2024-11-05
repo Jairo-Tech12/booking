@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Services</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li class="dropdown">
+                    <a href="#services" class="dropbtn">Services</a>
+                    <div class="dropdown-content">
+                        <a href="#flight">Flight</a>
+                        <a href="#hotel">Hotel</a>
+                        <a href="#travel">Travel</a>
+                    </div>
+                </li>
+                <li><a href="#explore">Explore</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+        <div class="services-grid">
+            <!-- Dubai Section -->
+            <section id="dubai" class="service-container">
+                <h2>Dubai</h2>
+                <div class="service-image">
+                    <img src="{% static 'imgs/dubai.jpg' %}" alt="Dubai Image">
+                </div>
+                <p>Explore the luxurious city of Dubai with our premium flight services. Enjoy direct flights with state-of-the-art amenities to ensure a comfortable journey.</p>
+                <a href="/fligth1/" class="book-button">Book Now</a>
+            </section>
+
+            <!-- Canada Section -->
+            <section id="canada" class="service-container">
+                <h2>Canada</h2>
+                <div class="service-image">
+                    <img src="{% static 'imgs/canada.jpg' %}" alt="Canada Image">
+                </div>
+                <p>Experience the beauty of Canada, from coast to coast. Our flights offer superior comfort for long-haul trips to major Canadian cities.</p>
+                <a href="/fligth1/" class="book-button">Book Now</a>
+            </section>
+
+            <!-- Australia Section -->
+            <section id="australia" class="service-container">
+                <h2>Australia</h2>
+                <div class="service-image">
+                    <img src="{% static 'imgs/australia.jpg' %}" alt="Australia Image">
+                </div>
+                <p>Fly to Australia with ease and comfort. Discover Sydney, Melbourne, and beyond with our excellent in-flight entertainment and service.</p>
+                <a href="/fligth/" class="book-button">Book Now</a>
+            </section>
+
+            <!-- Germany Section -->
+            <section id="germany" class="service-container">
+                <h2>Germany</h2>
+                <div class="service-image">
+                    <img src="{% static 'imgs/germany.jpg' %}" alt="Germany Image">
+                </div>
+                <p>Enjoy a seamless journey to Germany, landing in cities like Berlin, Frankfurt, and Munich. Our flights provide a first-class experience.</p>
+                <a href="/fligth1/" class="book-button">Book Now</a>
+            </section>
+
+            <!-- South Africa Section -->
+            <section id="south-africa" class="service-container">
+                <h2>South Africa</h2>
+                <div class="service-image">
+                    <img src="{% static 'imgs/south.jpg' %}" alt="South">
+                </div>
+                <p>Discover South Africa’s rich culture and scenic beauty. Our services offer the best in comfort and reliability for flights to major cities like Cape Town and Johannesburg.</p>
+                <a href="/fligth1/" class="book-button">Book Now</a>
+            </section>
+
+            <!-- Diani Section -->
+            <section id="diani" class="service-container">
+                <h2>Diani</h2>
+                <div class="service-image">
+                    <img src="{% static 'imgs/diani.jpg' %}" alt="Diani Image">
+                </div>
+                <p>Escape to the stunning beaches of Diani. Our flights offer an unforgettable travel experience to this tropical paradise on the Kenyan coast.</p>
+                <a href="/fligth1/" class="book-button">Book Now</a>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Global Flight Services. All rights reserved.</p>
+    </footer>
+</body>
+<style>
+    /* General Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+    }
+
+    /* Navbar */
+    header {
+        background-color: #333;
+        padding: 1rem;
+        color: #fff;
+        text-align: center;
+    }
+
+    header nav ul {
+        list-style: none;
+    }
+
+    header nav ul li {
+        display: inline-block;
+        position: relative;
+        margin: 0 10px;
+    }
+
+    header nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px;
+    }
+
+    header nav ul li a:hover {
+        text-decoration: underline;
+    }
+
+    /* Dropdown */
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #333;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: white;
+        padding: 10px 15px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        background-color: #575757;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    /* Main Content */
+    main {
+        max-width: 1000px;
+        margin: 2rem auto;
+        padding: 1rem;
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+
+    .service-container {
+        background-color: #fff;
+        padding: 1.5rem;
+        border-radius: 8px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-container:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .service-container h2 {
+        color: #333;
+        margin-bottom: 0.5rem;
+    }
+
+    .service-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+    }
+
+    .service-container p {
+        margin-top: 0.5rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+
+    /* Book Now Button */
+    .book-button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    .book-button:hover {
+        background-color: #0056b3;
+    }
+
+    /* Footer */
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 1rem;
+        margin-top: 2rem;
+    }
+</style>
+</html>

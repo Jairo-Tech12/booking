@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  /* Flex layout for sticky footer and centered content */
+  body {
+     background-image: url("{% static 'london.jpg' %}");
+    display: flex;
+    flex-direction: column;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centers the welcome box vertically */
+    min-height: calc(100vh - 150px); /* Adjust based on header/footer height */
+  }
+  
+  /* Header and Navbar Styles */
+  header {
+    background-color: #090a0a;
+    width: 100%;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+  }
+  
+  .logo {
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+  }
+  
+  /* Dropdown Menu */
+  .dropdown {
+    display: none;
+    position: absolute;
+    background-color: #0066cc;
+  }
+  
+  .nav-links li:hover .dropdown {
+    display: block;
+  }
+  
+  /* Centered Welcome Box Styling */
+  .welcome-box {
+    background-color: #f0f8ff;
+    color: #333;
+    padding: 2rem;
+    max-width: 700px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Footer Styling */
+  footer {
+    background-color: #0066cc;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+  }
+  
+  /* Mobile Menu Toggle */
+  .menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color:red;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Responsive Styling */
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: #0066cc;
+      text-align: center;
+    }
+  
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .menu-toggle {
+      display: block;
+    }
+  
+    .navbar.active .nav-links {
+      display: flex;
+    }
+  }
+  

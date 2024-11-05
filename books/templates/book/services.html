@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block current_page %}services{% endblock current_page %}|JkTech
+    </title>
+  
+</head>
+<body>
+    <!-- Header Section -->
+    <nav>
+        <div class="logo">JkTech</div>
+            <ul id="nav-menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/services/">Services</a>
+                <ul class="dropdown">
+                    <li><a href="/flight/">Flight</a></li>
+                    <li><a href="/hotel/">Hotel</a></li>
+                    <li><a href="/travel/">Travel</a></li>
+                </ul>
+            </li>
+            <li><a href="/explore/">Explore</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/contact/">Contact</a></li>
+        </ul>
+    </nav>
+    
+        
+    </header>
+
+    <!-- General Services Introduction -->
+    <section class="general-services">
+        <div class="container">
+            <div class="jk">
+                At Jairo Tech, we are dedicated to simplifying your travel experience. From booking flights to finding the perfect hotel and organizing travel packages, our comprehensive services cover all your needs. Explore our offerings below to make your travel easy, affordable, and enjoyable.</>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <main>
+        <h2>Our Services</h2>
+        <div class="service-container">
+            <div class="service">
+                
+                <h3>Flight Booking</h3>
+                <p>Book flights easily with our user-friendly platform. Search for flights to your favorite destinations at competitive prices.</p>
+                <a href="flight-booking.html" class="btn">Book Now</a>
+            </div>
+            <div class="image-grid">
+                <div class="image-container"><img src="{% static 'imgs/fligth.jpg' %}" alt="Flight Image 1" class="grid-image"></div>
+                <div class="image-container"><img src="{% static 'imgs/fligth1.jpg' %}" alt="Flight Image 2" class="grid-image"></div>
+                <div class="image-container"><img src="{% static 'imgs/fligth2.jpg' %}" alt="Flight Image 3" class="grid-image"></div>
+                <div class="image-container"><img src="{% static 'imgs/fligth3.jpg' %}" alt="Flight Image 4" class="grid-image"></div>
+            </div>
+
+            <div class="service">
+               
+                <h3>Hotel Booking</h3>
+                <p>Find the best hotels to stay in. Enjoy exclusive deals and comfortable accommodations with just a few clicks.</p>
+                <a href="hotel-booking.html" class="btn">Book Now</a>
+            </div>
+            <div class="image-grid">
+                <div class="image-container"><img src="{% static 'imgs/hotel.jpg' %}" alt="Hotel Image 1" class="grid-image"></div>
+                <div class="image-container"><img src="{% static 'imgs/hotel1.jpg' %}" alt="Hotel Image 2" class="grid-image"></div>
+                <div class="image-container"><img src="{% static 'imgs/hotel2.jpg' %}" alt="Hotel Image 3" class="grid-image"></div>
+                <div class="image-container"><img src="{% static 'imgs/hotel3.jpg' %}" alt="Hotel Image 4" class="grid-image"></div>
+            </div>
+
+            <div class="service">
+                <h3>Travel Booking</h3>
+                <p>Plan your entire trip with our travel booking services. Explore packages that suit your travel needs and budget.</p>
+                <a href="travel-booking.html" class="btn">Book Now</a>
+            </div>
+            
+            <div class="image-grid">
+                <div class="image-container"><img src="{% static 'imgs/travel.jpg' %}" alt="sgsdas" class="grid-image"></div>
+                <div class="image-container"><img src="{% static 'imgs/travel1.jpg' %}" alt="travel" class="grid-image"></div>
+                <div class="image-container"><img src="{% static 'imgs/travel2.jpg' %}" alt="travel3" class="grid-image"></div>
+                <div class="image-container"><img src="{% static 'imgs/travel3.jpg' %}" alt="travel4" class="grid-image"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Jairo Tech. All Rights Reserved.</p>
+        <p>Contact us: <a href="mailto:jairokibet1@gmail.com">jairokibet1@gmail.com</a></p>
+    </footer>
+</body>
+
+<style>
+    body {
+        font-family: Arial, sans-serif; 
+        padding: 0;
+        background-color: #f4f4f4; 
+        z-index: 100%;
+    }
+    
+    nav {
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        background-color: #020507; 
+        padding: 20px 20px; 
+    }
+    
+    .logo {
+        color: #f3730a; 
+        font-size: 24px; 
+        font-weight: bold; 
+    }
+    
+    ul {
+        list-style-type: none; 
+        padding: 0;
+        margin: 0; 
+    }
+    
+    #nav-menu {
+        display: flex; 
+    }
+    
+    li {
+        position: relative; 
+        margin-right: 20px;
+    }
+    
+    a {
+        text-decoration: none;
+        padding: 10px 15px;
+        color: #ecf0f1; 
+        transition: background-color 0.3s, color 0.3s; 
+        border-radius: 5px; 
+    }
+    
+    a:hover {
+        background-color: #34495e; 
+        color: #ffffff; 
+    }
+    
+    .dropdown {
+        display: none; 
+        position: absolute; 
+        top: 100%; 
+        left: 0; 
+        background-color: #34495e; 
+        border-radius: 5px; 
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); 
+        z-index: 1000;
+    }
+    
+    li:hover .dropdown {
+        display: block;
+    }
+    
+    .dropdown li {
+        display: block; 
+        margin: 0;
+    }
+    
+    .dropdown a {
+        padding: 10px 15px; 
+        color: #ecf0f1; 
+    }
+    
+    .dropdown a:hover {
+        background-color: #2c3e50; 
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        #nav-menu {
+            display: none;
+            flex-direction: column; 
+            width: 100%; 
+            background-color: #2c3e50; 
+            position: absolute; 
+            top: 60px; 
+            left: 0; 
+        }
+    
+        #nav-menu.active {
+            display: flex; 
+        }
+    
+        li {
+            margin: 5px 0;
+        }
+    
+       }
+    .jk{opacity: 1.9;
+        color:#04ff43
+
+    }
+    
+    .container{
+        background: #060707;
+        padding: 40px 20px;
+        margin: 20px auto;
+        max-width: 800px;
+        text-align: center;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(241, 240, 240, 0.1);
+        background-size: cover;
+        background-position: center;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #07f326;
+        text-align: center;
+        padding: 40px;
+        opacity: 0.9; 
+        }
+    .general-services{
+        background-image: url("{% static 'imgs/services1.jpg' %}");
+        opacity: 3;
+        background-size: cover;
+        height: 300px;
+        padding: 100px;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        z-index: 1;
+    }
+
+    /* Services Section */
+    main {
+        padding: 20px;
+        text-align: center;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+        color: #007BFF;
+    }
+
+    .service-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .service {
+        background: white;
+        border: 1px solid #09e701;
+        border-radius: 5px;
+        padding: 40px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        width: 100%;
+        max-width: 800px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        gap: 30px
+    }
+
+    .service:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .service h3 {
+        color: #0579f5;
+        margin: 10px 0;
+    }
+
+    .service-image {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    .image-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 40px; 
+        margin-top: 10px; 
+    }
+
+    .image-container {
+        background: #f9f9f9; 
+        border: 1px solid #ddd; 
+        border-radius: 5px;
+        overflow: hidden; 
+        transition: transform 0.3s; 
+        opacity: 3;
+    }
+
+    .image-container:hover {
+        transform: scale(1.05); 
+    }
+
+    .grid-image {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    .btn {
+        display: inline-block;
+        background: #007BFF;
+        color: white;
+        padding: 6px 15px;
+        text-decoration: none;
+        border-radius: 4px;
+        transition: background 0.3s;
+    }
+
+    .btn:hover {
+        background: #0056b3;
+    }
+
+    /* Footer Styling */
+    footer {
+        text-align: center;
+        padding: 12px;
+        height: 40x;
+        background: black;
+        color: white;
+        margin-top: 10px;
+        margin-bottom: 0px ;
+        margin-left: 0px;
+    }
+</style>
+</html>
