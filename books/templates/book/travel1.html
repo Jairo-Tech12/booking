@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block current_page %}Travel{% endblock current_page %} | Booking</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">JkTech</div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li>
+                <a href="/services/">Services</a>
+                <ul class="dropdown">
+                    <li><a href="/fligth/">Flight</a></li>
+                    <li><a href="/hotel/">Hotel</a></li>
+                    <li><a href="/travel/">Travel</a></li>
+                </ul>
+            </li>
+            <li><a href="/explore/">Explore</a></li>
+            <li><a href="/about/">About</a></li>
+            <li><a href="/contact/">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Book Your Travel Service</h1>
+
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }} <!-- Render form fields with paragraphs for styling -->
+            <button type="submit">Submit Booking</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2024 Jairo Tech. All rights reserved.</p>
+    </div>
+</body>
+<style>
+/* Your provided CSS styles go here */
+</style>
+</html>

@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-{%load static%}
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        {% block current_page %}services{% endblock current_page %}|JkTech
-    </title>
-  
+    <title>{% block current_page %}services{% endblock current_page %}|Booking</title>
+      
 </head>
 <body>
-    <!-- Header Section -->
+
+    <!-- Navbar -->
     <nav>
         <div class="logo">JkTech</div>
-            <ul id="nav-menu">
+        <ul>
             <li><a href="/">Home</a></li>
-            <li><a href="/services/">Services</a>
+            <li>
+                <a href="/services/">Services</a>
                 <ul class="dropdown">
-                    <li><a href="/flight/">Flight</a></li>
+                    <li><a href="/fligth/">Flight</a></li>
                     <li><a href="/hotel/">Hotel</a></li>
                     <li><a href="/travel/">Travel</a></li>
                 </ul>
@@ -27,309 +27,242 @@
             <li><a href="/contact/">Contact</a></li>
         </ul>
     </nav>
-    
-        
-    </header>
 
-    <!-- General Services Introduction -->
-    <section class="general-services">
+    <!-- Welcome Section -->
+    <section class="welcome">
         <div class="container">
-            <div class="jk">
-                At Jairo Tech, we are dedicated to simplifying your travel experience. From booking flights to finding the perfect hotel and organizing travel packages, our comprehensive services cover all your needs. Explore our offerings below to make your travel easy, affordable, and enjoyable.</>
-
-            </div>
+            <h1>Welcome to Jairo Tech</h1>
+            <p>At Jairo Tech, we are committed to making your travel experience smooth and memorable. Whether you're booking a flight, hotel, or a full travel package, we have everything you need to create your perfect trip. Let's explore the world together!</p>
         </div>
     </section>
 
     <!-- Services Section -->
-    <main>
-        <h2>Our Services</h2>
-        <div class="service-container">
-            <div class="service">
-                
-                <h3>Flight Booking</h3>
-                <p>Book flights easily with our user-friendly platform. Search for flights to your favorite destinations at competitive prices.</p>
-                <a href="flight-booking.html" class="btn">Book Now</a>
-            </div>
-            <div class="image-grid">
-                <div class="image-container"><img src="{% static 'imgs/fligth.jpg' %}" alt="Flight Image 1" class="grid-image"></div>
-                <div class="image-container"><img src="{% static 'imgs/fligth1.jpg' %}" alt="Flight Image 2" class="grid-image"></div>
-                <div class="image-container"><img src="{% static 'imgs/fligth2.jpg' %}" alt="Flight Image 3" class="grid-image"></div>
-                <div class="image-container"><img src="{% static 'imgs/fligth3.jpg' %}" alt="Flight Image 4" class="grid-image"></div>
-            </div>
-
-            <div class="service">
-               
-                <h3>Hotel Booking</h3>
-                <p>Find the best hotels to stay in. Enjoy exclusive deals and comfortable accommodations with just a few clicks.</p>
-                <a href="hotel-booking.html" class="btn">Book Now</a>
-            </div>
-            <div class="image-grid">
-                <div class="image-container"><img src="{% static 'imgs/hotel.jpg' %}" alt="Hotel Image 1" class="grid-image"></div>
-                <div class="image-container"><img src="{% static 'imgs/hotel1.jpg' %}" alt="Hotel Image 2" class="grid-image"></div>
-                <div class="image-container"><img src="{% static 'imgs/hotel2.jpg' %}" alt="Hotel Image 3" class="grid-image"></div>
-                <div class="image-container"><img src="{% static 'imgs/hotel3.jpg' %}" alt="Hotel Image 4" class="grid-image"></div>
-            </div>
-
-            <div class="service">
-                <h3>Travel Booking</h3>
-                <p>Plan your entire trip with our travel booking services. Explore packages that suit your travel needs and budget.</p>
-                <a href="travel-booking.html" class="btn">Book Now</a>
-            </div>
-            
-            <div class="image-grid">
-                <div class="image-container"><img src="{% static 'imgs/travel.jpg' %}" alt="sgsdas" class="grid-image"></div>
-                <div class="image-container"><img src="{% static 'imgs/travel1.jpg' %}" alt="travel" class="grid-image"></div>
-                <div class="image-container"><img src="{% static 'imgs/travel2.jpg' %}" alt="travel3" class="grid-image"></div>
-                <div class="image-container"><img src="{% static 'imgs/travel3.jpg' %}" alt="travel4" class="grid-image"></div>
+    <section class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="service-container">
+                <div class="service-card">
+                    <div class="content">
+                        <h5>Flight Booking</h5>
+                        <p>Book flights to your desired destinations at the best prices. We offer both domestic and international flights to give you the flexibility to travel whenever and wherever you want.</p>
+                        <a href="/fligth1/" class="btn">Book now</a>
+                    </div>
+                    <img src="{% static 'imgs/fligth.jpg' %}" alt="Flight Booking">
+                </div>
+                <div class="service-card">
+                    <div class="content">
+                        <h5>Hotel Booking</h5>
+                        <p>Whether you're traveling for business or leisure, book your stay at top-rated hotels with Jairo Tech. Choose from a wide range of accommodations to suit your needs and budget.</p>
+                        <a href="/hotel1" class="btn">Book Now</a>
+                    </div>
+                    <img src="{% static 'imgs/hotel.jpg' %}" alt="Hotel Booking">
+                </div>
+                <div class="service-card">
+                    <div class="content">
+                        <h5>Travel Booking</h5>
+                        <p>Plan your entire trip with us! From sightseeing tours to local transportation, we provide comprehensive travel packages for an unforgettable experience.</p>
+                        <a href="/travel/" class="btn">Book now</a>
+                    </div>
+                    <img src="{% static 'imgs/couple.jpg' %}" alt="Travel Booking">
+                </div>
             </div>
         </div>
-    </main>
+    </section>
 
-    <!-- Footer Section -->
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Jairo Tech. All Rights Reserved.</p>
-        <p>Contact us: <a href="mailto:jairokibet1@gmail.com">jairokibet1@gmail.com</a></p>
+        <p>&copy; 2024 Jairo Tech. All rights reserved.</p>
     </footer>
-</body>
 
+</body>
 <style>
     body {
-        font-family: Arial, sans-serif; 
+        font-family: Arial, sans-serif;
+        margin: 0;
         padding: 0;
-        background-color: #f4f4f4; 
-        z-index: 100%;
+        box-sizing: border-box;
+        background-color: #f7f7f7;
     }
-    
     nav {
-        display: flex; 
-        justify-content: space-between; 
-        align-items: center; 
-        background-color: #020507; 
-        padding: 20px 20px; 
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #1c1f26;
+        padding: 10px 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
-    
+
     .logo {
-        color: #f3730a; 
-        font-size: 24px; 
-        font-weight: bold; 
+        color: #f3730a;
+        font-size: 1.5rem;
+        font-weight: 700;
     }
-    
+
     ul {
-        list-style-type: none; 
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        margin: 0;
         padding: 0;
-        margin: 0; 
     }
-    
-    #nav-menu {
-        display: flex; 
-    }
-    
-    li {
-        position: relative; 
-        margin-right: 20px;
-    }
-    
-    a {
+
+    ul a {
         text-decoration: none;
-        padding: 10px 15px;
-        color: #ecf0f1; 
-        transition: background-color 0.3s, color 0.3s; 
-        border-radius: 5px; 
+        color: #fff;
+        font-weight: 500;
+        transition: color 0.3s ease;
     }
-    
-    a:hover {
-        background-color: #34495e; 
-        color: #ffffff; 
+
+    ul a:hover {
+        color: #f3730a;
     }
-    
+
     .dropdown {
-        display: none; 
-        position: absolute; 
-        top: 100%; 
-        left: 0; 
-        background-color: #34495e; 
-        border-radius: 5px; 
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); 
-        z-index: 1000;
+        display: none;
+        position: absolute;
+        top: 40px;
+        background-color: #1c1f26;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        padding: 10px;
     }
-    
+
     li:hover .dropdown {
         display: block;
     }
-    
-    .dropdown li {
-        display: block; 
-        margin: 0;
-    }
-    
-    .dropdown a {
-        padding: 10px 15px; 
-        color: #ecf0f1; 
-    }
-    
-    .dropdown a:hover {
-        background-color: #2c3e50; 
-    }
-    
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        #nav-menu {
-            display: none;
-            flex-direction: column; 
-            width: 100%; 
-            background-color: #2c3e50; 
-            position: absolute; 
-            top: 60px; 
-            left: 0; 
-        }
-    
-        #nav-menu.active {
-            display: flex; 
-        }
-    
-        li {
-            margin: 5px 0;
-        }
-    
-       }
-    .jk{opacity: 1.9;
-        color:#04ff43
 
+    .dropdown a {
+        display: block;
+        padding: 10px;
+        color: #fff;
     }
+
+    /* Navbar Styles */
     
-    .container{
-        background: #060707;
-        padding: 40px 20px;
-        margin: 20px auto;
+
+    /* Welcome Section */
+    .welcome {
+        background-image: url("{% static 'imgs/services.jpg' %}"); /* Add your desired background image here */
+        background-size: cover;
+        background-position: center;
+        color: #fff;
+        text-align: center;
+        padding: 100px 0;
+    }
+
+    .welcome h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+    }
+
+    .welcome p {
+        font-size: 20px;
         max-width: 800px;
-        text-align: center;
-        border-radius: 10px;
-        box-shadow: 0 2px 5px rgba(241, 240, 240, 0.1);
-        background-size: cover;
-        background-position: center;
-        height: 200px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        color: #07f326;
-        text-align: center;
-        padding: 40px;
-        opacity: 0.9; 
-        }
-    .general-services{
-        background-image: url("{% static 'imgs/services1.jpg' %}");
-        opacity: 3;
-        background-size: cover;
-        height: 300px;
-        padding: 100px;
-        background-position: center;
-        background-repeat: no-repeat;
-        position: relative;
-        z-index: 1;
+        margin: 0 auto;
+    }
+
+    /* Container Styles for Content */
+    .container {
+        width: 90%;
+        margin: 0 auto;
     }
 
     /* Services Section */
-    main {
-        padding: 20px;
-        text-align: center;
+    .services {
+        padding: 50px 0;
+        background-color: #fff;
     }
 
-    h2 {
-        margin-bottom: 20px;
-        color: #007BFF;
+    .services h2 {
+        text-align: center;
+        font-size: 32px;
+        margin-bottom: 40px;
+        color: #333;
     }
 
     .service-container {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        max-width: 800px;
-        margin: 0 auto;
+        gap: 30px;
+        margin-top: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-left: 250px;
+    }
+    
+    .service-card {
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        width: 300px;
+    }
+
+    .service-card:hover {
+        transform: scale(1.05);
+    }
+
+    .service-card .content {
         padding: 20px;
-    }
-
-    .service {
-        background: white;
-        border: 1px solid #09e701;
-        border-radius: 5px;
-        padding: 40px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        margin-bottom: 20px;
-        width: 100%;
-        max-width: 800px;
-        transition: transform 0.3s, box-shadow 0.3s;
-        gap: 30px
-    }
-
-    .service:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .service h3 {
-        color: #0579f5;
-        margin: 10px 0;
-    }
-
-    .service-image {
-        width: 100%;
-        height: auto;
-        border-radius: 5px;
-        margin-bottom: 10px;
-    }
-
-    .image-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 40px; 
-        margin-top: 10px; 
-    }
-
-    .image-container {
-        background: #f9f9f9; 
-        border: 1px solid #ddd; 
-        border-radius: 5px;
-        overflow: hidden; 
-        transition: transform 0.3s; 
-        opacity: 3;
-    }
-
-    .image-container:hover {
-        transform: scale(1.05); 
-    }
-
-    .grid-image {
-        width: 100%;
-        height: auto;
-        border-radius: 5px;
-    }
-
-    .btn {
-        display: inline-block;
-        background: #007BFF;
-        color: white;
-        padding: 6px 15px;
-        text-decoration: none;
-        border-radius: 4px;
-        transition: background 0.3s;
-    }
-
-    .btn:hover {
-        background: #0056b3;
-    }
-
-    /* Footer Styling */
-    footer {
         text-align: center;
-        padding: 12px;
-        height: 40x;
-        background: black;
+    }
+
+    .service-card h5 {
+        font-size: 22px;
+        color: #333;
+        margin-bottom: 15px;
+    }
+
+    .service-card p {
+        font-size: 16px;
+        color: #555;
+        margin-bottom: 20px;
+    }
+
+    .service-card .btn {
+        padding: 10px 20px;
+        background-color: #ff7f00;
         color: white;
-        margin-top: 10px;
-        margin-bottom: 0px ;
-        margin-left: 0px;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+
+    .service-card .btn:hover {
+        background-color: #e57c00;
+    }
+
+    .service-card img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-top: 2px solid #ff7f00;
+        filter: brightness(1.2);
+    }
+
+    /* Footer */
+    footer {
+        background-color: #121314;
+        color: #e7a71c;
+        text-align: center;
+        padding: 1rem;
+        width: 100%;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .service-card {
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .service-card {
+            width: 100%;
+            margin: 0 0 20px 0;
+        }
     }
 </style>
 </html>
