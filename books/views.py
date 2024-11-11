@@ -1,8 +1,8 @@
 from django.shortcuts import render ,redirect
+from django.http import HttpResponse
 from books.form import BookingForm
-# from books.form import TravelBookingForm
-# from books.form import HotelBookingForm
-# Create your views here.
+from django import forms
+
 def index(request):
          return render(request, "book/index.html")
      
@@ -26,31 +26,50 @@ def travel(request):
 def hotel(request):
     return render( request,"book/hotel.html")
 
-
-def fligth1(request):
-      return render(request, 'book/fligth1.html')
-
-  
-def travel1(request):
+def fligthbook(request):
     if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():
             form.save()  # Save the booking to the database
-            return redirect('wow')  # Redirect to a success page
+            return HttpResponse("Flight booked successfully!")  # You could also use redirect
+        else:
+            # Return the form with validation errors
+            return render(request, 'book/fligthbook.html', {'form': form})
     else:
+        # Render the empty form on GET request
         form = BookingForm()
-    return render( request,"book/travel1.html")
+        return render(request, 'book/fligthbook.html', {'form': form})
+
+  
+def travel1(request):
+     if request.method == 'POST':
+        form = BookingForm(request.POST)
+        if form.is_valid():
+            form.save()  # Save the booking to the database
+            return HttpResponse("Flight booked successfully!")  # You could also use redirect
+        else:
+            # Return the form with validation errors
+            return render(request, 'book/travel1.html', {'form': form})
+     else:
+        # Render the empty form on GET request
+        form = BookingForm()
+        return render(request, 'book/travel1.html', {'form': form})
 
 
 
 def hotel1(request):
-    if request.method == 'POST':
+       if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():
             form.save()  # Save the booking to the database
-            return redirect('wow')  # Redirect to a success page
-    else:BookingForm()
-    return render( request,"book/hotel1.html")
+            return HttpResponse("Flight booked successfully!")  # You could also use redirect
+        else:
+            # Return the form with validation errors
+            return render(request, 'book/hotel1.html', {'form': form})
+       else:
+        # Render the empty form on GET request
+        form = BookingForm()
+        return render(request, 'book/hotel1.html', {'form': form})
 
 
 def wow(request):

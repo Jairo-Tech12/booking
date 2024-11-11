@@ -18,7 +18,7 @@
         <ul>
             <li><a href="/">Home</a></li>
             <li>
-                <a href="/services/">Services</a>
+                <a href="/services/" class="dropbtn">Services</a>
                 <ul class="dropdown">
                     <li><a href="/fligth/">Flight</a></li>
                     <li><a href="/hotel/">Hotel</a></li>
@@ -53,8 +53,7 @@
         box-sizing: border-box;
     }
 
-    body,
-    html {
+    body{
         height: 100%;
         font-family: Arial, sans-serif;
         color: #333;
@@ -100,6 +99,7 @@
         }
 
         .dropdown {
+           display: inline-block;
             display: none;
             position: absolute;
             top: 40px;
@@ -150,6 +150,7 @@
         text-align: center;
         padding: 1rem;
         width: 100%;
+        margin-bottom: 0;
     }
 </style>
 </html>

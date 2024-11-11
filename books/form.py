@@ -1,6 +1,7 @@
 from django import forms
-from .models import  hotel
+from .models import  fligth
 from .models import travel
+from .models import hotel
 
 
 # Flight Booking Form
@@ -8,18 +9,25 @@ from .models import travel
 # Hotel Booking Form
 class BookingForm(forms.ModelForm):
     class Meta:
-        model = hotel  # Ensure 'hotel' model exists with the same fields
-        fields = ['name', 'email', 'phone_number', 'destination', 'date']
-        widgets = {
+         model =   fligth
+         fields = ['name', 'email', 'phone_number', 'destination', 'date']
+         widgets = {
             'date': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
         }
-        
-        class BookingForm(forms.ModelForm):
-         class Meta:
-            model = travel # Ensure 'hotel' model exists with the same fields
-            fields = ['name', 'email', 'phone_number', 'destination', 'date']
-            widgets = {
+      
+class BookingForm(forms.ModelForm):
+       class Meta:
+         model =   travel
+         fields = ['name', 'email', 'phone_number', 'destination', 'date']
+         widgets = {
             'date': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
         }
-  
-  
+      
+class BookingForm(forms.ModelForm):
+       class Meta:
+         model =   hotel
+         fields = ['name', 'email', 'phone_number', 'destination', 'date']
+         widgets = {
+            'date': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
+        } 
+      

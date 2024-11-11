@@ -4,282 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block current_page %}Explore{% endblock current_page %}|Booking</title>
-    <style>
-        /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-            margin: 20px 0;
-        }
-
-        h2 {
-            text-align: center;
-            color: #333;
-            margin: 40px 0;
-            font-size: 2rem;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* Navbar Styles */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #1c1f26;
-            padding: 10px 20px;
-            color: #fff;
-        }
-
-        nav .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #f3730a;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-
-        nav ul li {
-            position: relative;
-        }
-
-        nav ul a {
-            color: white;
-            font-size: 1rem;
-            font-weight: 500;
-            padding: 5px 10px;
-            transition: color 0.3s ease;
-        }
-
-        nav ul a:hover {
-            color: #f3730a;
-        }
-
-        /* Thank You Section */
-        .container-thank-you {
-            max-width: 1000px; /* Restrict the width for better readability */
-            margin: 20px auto; /* Center the container */
-            padding: 15px; /* Add padding for spacing */
-        }
-        
-        .thank-you {
-            background: url("{% static 'imgs/east/watch.jpg' %}") no-repeat center center/cover;
-            color: orange;
-          
-            text-align: center;
-            padding: 50px 20px;
-            border-radius: 8px; /* Optional: Adds rounded corners */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds subtle shadow for depth */
-        }
-        h2{
-            color: red;
-        }
-        
-
-        /* Footer Styles */
-        footer {
-            background-color: #1c1f26;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 30px;
-        }
-
-        footer p {
-            margin: 0;
-        }
-
-        /* Grid Layout for Images */
-        .container {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr; /* First column wide, others smaller */
-            grid-template-rows: 1fr; /* Same height for all rows */
-            gap: 20px;
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 15px;
-            height: 400px; /* Reduced height after removing the fourth row */
-        }
-
-        /* First Column (Spanning Full Height) */
-        .container .box:first-child {
-            grid-column: 1;
-            grid-row: span 2; /* Spans both rows */
-        }
-
-        /* Image Styling */
-        .container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Ensures image covers the container */
-            border-radius: 8px;
-        }
-
-        /* Image Container with Text at the Bottom */
-        .image-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 8px;
-            height: 100%;
-
-        }
-
-        .image-container a {
-            position: absolute;
-            bottom: 10px; 
-            left: 80%;
-            transform: translateX(-50%); /* Center the text horizontally */
-            color: white;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-            text-decoration: none;
-            padding: 5px 4px;
-            background-color: red;
-            border-radius: 3px;
-        }
-        /* Identifier Styles */
-.image-container .identifier {
-    position: absolute;
-    top: 10px;
-    left: 3px;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-    font-size: 0.9rem;
-    font-weight: bold;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-
-        .image-container a:hover {
-            background-color: rgba(0, 0, 0, 0.7);
-        }
-
-        /* Box and images */
-        .box {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            height: 100%;
-        }
-        .container-east-africa {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr); /* 4 columns layout */
-            gap: 20px; /* Space between grid items */
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 15px;
-            height: 100%;
-        }
-        
-        .container-east-africa .box {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            text-align: center; /* Center align the text */
-            height: 100%;
-        }
-        
-        .container-east-africa .image-container {
-            border-radius: 8px 8px 0 0; /* Top corners rounded */
-            overflow: hidden; /* Ensures image stays within rounded corners */
-        }
-        
-        .container-east-africa img {
-            width: 100%;
-            height: auto; /* Maintain image aspect ratio */
-            display: block;
-        }
-        
-        .container-east-africa .info {
-            margin-top: 5px; /* Space between image and text */
-            {% comment %} font-size: 1rem; /* Slightly larger for better readability */ {% endcomment %}
-            color: #333;
-            padding: 4px ;
-            background-color: #f9f9f9; /* Light background for contrast */
-            border-top: 2px solid #ddd; /* Subtle separator between image and info */
-            height: 100%;
-        }
-        
-        .container-east-africa .info span {
-            display: block; /* Each piece of information on a new line */
-            {% comment %} font-weight: 500; /* Make the text slightly bold */ {% endcomment %}
-        }
-        
-
-        /* Specific sizes for second and third columns */
-        .box:nth-child(2), .box:nth-child(3) {
-            height: 200px;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .container-east-africa {
-                grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .container-east-africa {
-                grid-template-columns: 1fr; /* Single column on very small screens */
-            }
-        }
-        
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-                flex-direction: column;
-            }
-
-            .burger {
-                display: block;
-                cursor: pointer;
-            }
-
-            .burger.active + ul {
-                display: flex;
-            }
-
-            .container {
-                grid-template-columns: 1fr;
-                grid-template-rows: repeat(4, 1fr); /* Single column with 4 rows */
-            }
-
-            .container .box:first-child {
-                grid-column: 1;
-                grid-row: span 3; /* First box spans 3 rows */
-            }
-        }
-    </style>
-</head>
+    <title>{% block current_page %}Explore{% endblock current_page %}</title>
+   </head>
 <body>
 
 <!-- Navbar -->
 <nav>
     <div class="logo">JkTech</div>
-    <div class="burger" onclick="toggleNav()">☰</div>
     <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/services/">Services</a></li>
         <li><a href="/explore/">Explore</a></li>
         <li><a href="/about/">About</a></li>
         <li><a href="/contact/">Contact</a></li>
+        <div class="burger" onclick="toggleNav()">☰</div>
+
     </ul>
 </nav>
 
@@ -297,36 +36,41 @@
 <div class="container">
     <div class="box">
         <div class="image-container">
+            <span class="identifier">Fligth</span>
             <img src="{% static 'imgs/fligth.jpg' %}" alt="Flight Service">
-            <a href="/flight/">more</a>
+            <a href="/kenya/wildlife/">Explore more</a>
         </div>
     </div>
 
     <div class="box">
         <div class="image-container">
+            <span class="identifier">Beaches</span>
             <img src="{% static 'imgs/hotel.jpg' %}" alt="Hotel Service">
-            <a href="/hotel/">Book Now</a>
+            <a href="/hotel/">Beaches</a>
         </div>
     </div>
 
     <div class="box">
         <div class="image-container">
+            <span class="identifier">Hotels</span>
             <img src="{% static 'imgs/travel.jpg' %}" alt="Travel Packages">
-            <a href="/travel/">Book Now</a>
+            <a href="/travel/">more</a>
         </div>
     </div>
 
     <div class="box">
         <div class="image-container">
+            <span class="identifier">Travels</span>
             <img src="{% static 'imgs/hotel.jpg' %}" alt="Tours">
-            <a href="/tours/">Book Now</a>
+            <a href="/tours/">More</a>
         </div>
     </div>
 
     <div class="box">
         <div class="image-container">
+            <span class="identifier">Hiking</span>
             <img src="{% static 'imgs/fligth3.jpg' %}" alt="Car Rental">
-            <a href="/carrental/">Appartments</a>
+            <a href="/carrental/">More</a>
         </div>
     </div>
 
@@ -468,4 +212,279 @@
 
 
 </body>
+<style>
+    /* General Styles */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+        margin: 20px 0;
+    }
+
+    h2 {
+        text-align: center;
+        color: #333;
+        margin: 40px 0;
+        font-size: 2rem;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    /* Navbar Styles */
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #1c1f26;
+        padding: 10px 20px;
+        color: #fff;
+    }
+
+    nav .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #f3730a;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+    }
+
+    nav ul li {
+        position: relative;
+    }
+
+    nav ul a {
+        color: white;
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 5px 10px;
+        transition: color 0.3s ease;
+    }
+
+    nav ul a:hover {
+        color: #f3730a;
+    }
+
+    /* Thank You Section */
+    .container-thank-you {
+        max-width: 1000px; 
+        margin: 20px auto; 
+        padding: 15px; 
+    }
+    
+    .thank-you {
+        background: url("{% static 'imgs/east/watch.jpg' %}") no-repeat center center/cover;
+        color: orange;
+      
+        text-align: center;
+        padding: 50px 20px;
+        border-radius: 8px; /* Optional: Adds rounded corners */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Adds subtle shadow for depth */
+    }
+    h2{
+        color: red;
+    }
+    
+
+    /* Footer Styles */
+    footer {
+        background-color: #1c1f26;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        margin-top: 30px;
+    }
+
+    footer p {
+        margin: 0;
+    }
+
+    /* Grid Layout for Images */
+    .container {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr; /* First column wide, others smaller */
+        grid-template-rows: 1fr; /* Same height for all rows */
+        gap: 20px;
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 15px;
+        height: 400px; /* Reduced height after removing the fourth row */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    }
+
+    /* First Column (Spanning Full Height) */
+    .container .box:first-child {
+        grid-column: 1;
+        grid-row: span 2; /* Spans both rows */
+    }
+
+    /* Image Styling */
+    .container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensures image covers the container */
+        border-radius: 8px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    }
+
+    /* Image Container with Text at the Bottom */
+    .image-container {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        height: 100%;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+
+    }
+
+    .image-container a {
+        position: absolute;
+        bottom: 1px; 
+        left: 80%;
+        transform: translateX(-20%); /* Center the text horizontally */
+        color: white;
+        text-align: center;
+        padding: 1px 2px;
+        background-color: red;
+        border-radius: 5px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        display: block;
+
+    }
+    .image-container .identifier {
+              position: absolute;
+              top: 10px;
+              background-color: rgba(0, 0, 0, 0.6);
+              color: white;
+              font-size: 0.9rem;
+              font-weight: bold;
+              padding: 5px;
+              border-radius: 5px;
+              transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+
+    .image-container a:hover {
+        background-color: rgba(0, 0, 0, 0.7);
+        transition: background-color 0.3s ease;
+
+    }
+
+    /* Box and images */
+    .box {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        height: 100%;
+    }
+    .container-east-africa {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* 4 columns layout */
+        gap: 20px; /* Space between grid items */
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 15px;
+        height: 100%;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    }
+    
+    .container-east-africa .box {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        text-align: center; /* Center align the text */
+        height: 100%;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    }
+    
+    .container-east-africa .image-container {
+        border-radius: 8px 8px 0 0; /* Top corners rounded */
+        overflow: hidden; /* Ensures image stays within rounded corners */
+    }
+    
+    .container-east-africa img {
+        width: 100%;
+        height: auto; /* Maintain image aspect ratio */
+        display: block;
+    }
+    
+    .container-east-africa .info {
+        margin-top: 5px; /* Space between image and text */
+        color: red;
+        padding: 4px ;
+        background-color: #f9f9f9; /* Light background for contrast */
+        border-top: 2px solid #ddd; /* Subtle separator between image and info */
+        height: 100%;
+    }
+    
+    .container-east-africa .info span {
+        display: block; /* Each piece of information on a new line */
+        {% comment %} font-weight: 500; /* Make the text slightly bold */ {% endcomment %}
+    }
+    
+
+    /* Specific sizes for second and third columns */
+    .box:nth-child(2), .box:nth-child(3) {
+        height: 200px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .container-east-africa {
+            grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .container-east-africa {
+            grid-template-columns: 1fr; /* Single column on very small screens */
+        }
+    }
+    
+    @media (max-width: 768px) {
+        nav ul {
+            display: none;
+            flex-direction: column;
+        }
+
+        .burger {
+            display: block;
+            cursor: pointer;
+        }
+
+        .burger.active + ul {
+            display: flex;
+        }
+
+        .container {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(4, 1fr); /* Single column with 4 rows */
+        }
+
+        .container .box:first-child {
+            grid-column: 1;
+            grid-row: span 3; /* First box spans 3 rows */
+        }
+    }
+</style>
 </html>

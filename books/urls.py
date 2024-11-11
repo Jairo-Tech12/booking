@@ -10,7 +10,7 @@ urlpatterns = [
     path("fligth/", v.fligth),
      path("travel/", v.travel),
     path("hotel/", v.hotel),
-    path("fligth1/", v.fligth1),
+    path("fligthbook/", v.fligthbook),
     path("hotel1/", v.hotel1),
     path("travel1/", v.travel1),
     path("wow/", v.wow),

@@ -31,8 +31,10 @@
     <!-- Welcome Section -->
     <section class="welcome">
         <div class="container">
+            <section class="welcome-box">
             <h1>Welcome to Jairo Tech</h1>
             <p>At Jairo Tech, we are committed to making your travel experience smooth and memorable. Whether you're booking a flight, hotel, or a full travel package, we have everything you need to create your perfect trip. Let's explore the world together!</p>
+        </section>
         </div>
     </section>
 
@@ -45,7 +47,7 @@
                     <div class="content">
                         <h5>Flight Booking</h5>
                         <p>Book flights to your desired destinations at the best prices. We offer both domestic and international flights to give you the flexibility to travel whenever and wherever you want.</p>
-                        <a href="/fligth1/" class="btn">Book now</a>
+                        <a href="/fligth/" class="btn">Book now</a>
                     </div>
                     <img src="{% static 'imgs/fligth.jpg' %}" alt="Flight Booking">
                 </div>
@@ -53,7 +55,7 @@
                     <div class="content">
                         <h5>Hotel Booking</h5>
                         <p>Whether you're traveling for business or leisure, book your stay at top-rated hotels with Jairo Tech. Choose from a wide range of accommodations to suit your needs and budget.</p>
-                        <a href="/hotel1" class="btn">Book Now</a>
+                        <a href="/hotel/" class="btn">Book Now</a>
                     </div>
                     <img src="{% static 'imgs/hotel.jpg' %}" alt="Hotel Booking">
                 </div>
@@ -142,13 +144,19 @@
 
     /* Welcome Section */
     .welcome {
-        background-image: url("{% static 'imgs/services.jpg' %}"); /* Add your desired background image here */
+        background-image: url("{% static 'imgs/services1.jpg' %}"); /* Add your desired background image here */
         background-size: cover;
         background-position: center;
-        color: #fff;
+        color: #05f811;
         text-align: center;
-        padding: 100px 0;
+        padding: 50px 10px;
+        border-radius: 14px; 
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin-top: 2%;
+        margin-left: 3%;
+        margin-right: 3%;
     }
+    
 
     .welcome h1 {
         font-size: 48px;
@@ -163,8 +171,11 @@
 
     /* Container Styles for Content */
     .container {
+        max-width: 1500px; 
+        margin: 10px 10px; 
+        padding: 10px 0;
         width: 90%;
-        margin: 0 auto;
+        margin-left: 10%;
     }
 
     /* Services Section */

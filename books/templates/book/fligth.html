@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block current_page %}Travel{% endblock current_page %}|Booking</title>
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 <body>
     <!-- Navbar -->
@@ -14,7 +13,7 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li class="dropdown">
-                    <a href="/sdervices/" class="dropbtn">Services</a>
+                    <a href="/services/" class="dropbtn">Services</a>
                     <div class="dropdown-content">
                         <a href="/fligth/">Flight</a>
                         <a href="/hotel/">Hotel</a>
@@ -48,7 +47,7 @@
                     <img src="{% static 'imgs/canada.jpg' %}" alt="Canada Image">
                 </div>
                 <p>Experience the beauty of Canada, from coast to coast. Our flights offer superior comfort for long-haul trips to major Canadian cities.</p>
-                <a href="/fligth1/" class="book-button">Book Now</a>
+                <a href="/fligthbook/" class="book-button">Book Now</a>
             </section>
 
             <!-- Australia Section -->
@@ -58,7 +57,7 @@
                     <img src="{% static 'imgs/australia.jpg' %}" alt="Australia Image">
                 </div>
                 <p>Fly to Australia with ease and comfort. Discover Sydney, Melbourne, and beyond with our excellent in-flight entertainment and service.</p>
-                <a href="/fligth/" class="book-button">Book Now</a>
+                <a href="/fligthbook/" class="book-button">Book Now</a>
             </section>
 
             <!-- Germany Section -->
@@ -68,7 +67,7 @@
                     <img src="{% static 'imgs/germany.jpg' %}" alt="Germany Image">
                 </div>
                 <p>Enjoy a seamless journey to Germany, landing in cities like Berlin, Frankfurt, and Munich. Our flights provide a first-class experience.</p>
-                <a href="/fligth1/" class="book-button">Book Now</a>
+                <a href="/fligthbook/" class="book-button">Book Now</a>
             </section>
 
             <!-- South Africa Section -->
@@ -78,7 +77,7 @@
                     <img src="{% static 'imgs/south.jpg' %}" alt="South">
                 </div>
                 <p>Discover South Africa’s rich culture and scenic beauty. Our services offer the best in comfort and reliability for flights to major cities like Cape Town and Johannesburg.</p>
-                <a href="/fligth1/" class="book-button">Book Now</a>
+                <a href="/fligthbook/" class="book-button">Book Now</a>
             </section>
 
             <!-- Diani Section -->
@@ -88,7 +87,7 @@
                     <img src="{% static 'imgs/diani.jpg' %}" alt="Diani Image">
                 </div>
                 <p>Escape to the stunning beaches of Diani. Our flights offer an unforgettable travel experience to this tropical paradise on the Kenyan coast.</p>
-                <a href="/fligth1/" class="book-button">Book Now</a>
+                <a href="/fligthbook/" class="book-button">Book Now</a>
             </section>
         </div>
     </main>
@@ -99,7 +98,6 @@
     </footer>
 </body>
 <style>
-    /* General Reset */
     * {
         margin: 0;
         padding: 0;
