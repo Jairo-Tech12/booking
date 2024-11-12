@@ -2,6 +2,8 @@ from django import forms
 from .models import  fligth
 from .models import travel
 from .models import hotel
+from .models import message
+
 
 
 # Flight Booking Form
@@ -30,4 +32,13 @@ class BookingForm(forms.ModelForm):
          widgets = {
             'date': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
         } 
+      
+      
+            
+class ContactForm(forms.ModelForm):
+       class Meta:
+         model =   message
+         fields = ['name', 'phone', 'gender', 'message']
+         widgets = {
+      } 
       

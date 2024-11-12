@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block current_page %}Home{% endblock current_page %}|Booking</title>
 
-    <!-- Custom CSS -->
-    
-</head>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 
+
+</head>
 <body>
-    <!-- Navigation Bar -->
+
+    <!-- Navbar -->
     <nav>
         <div class="logo">JkTech</div>
         <ul>
             <li><a href="/">Home</a></li>
             <li>
-                <a href="/services/" class="dropbtn">Services</a>
+                <a href="/services/">Services</a>
                 <ul class="dropdown">
                     <li><a href="/fligth/">Flight</a></li>
                     <li><a href="/hotel/">Hotel</a></li>
@@ -31,126 +31,705 @@
         </ul>
     </nav>
 
-    <!-- Centered Welcome Box in a Container -->
-    <div class="wrapper">
+    <!-- Welcome Section -->
+    <section class="welcome">
         <div class="container">
             <section class="welcome-box">
-                <p>Welcome to JKTech! We’re thrilled to be your partner in exploring the world. Let us make your travel plans easy and memorable.</p>
+                <h1>Welcome to Jairo Tech</h1>
+                <p>At Jairo Tech, we are committed to making your travel experience smooth and memorable. Whether you're booking a flight, hotel, or a full travel package, we have everything you need to create your perfect trip. Let's explore the world together!</p>
             </section>
         </div>
+    </section>
+
+    <!-- Plan Your Trip Title Section -->
+    <section class="plan-your-trip">
+        <h2>Plan Your Trip</h2>
+    </section>
+
+    <!-- Image Grid Section -->
+    <section class="image-grid-section">
+        <div class="grid-container">
+            <!-- First column with one image (400x300) -->
+            <div class="grid-item single-image">
+                <a href="/explore/">
+                    <img src="{% static 'imgs/home/beaches.jpg' %}" alt="Image 1">
+                <div class="caption">
+                    <a href="/flight/">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Second column with two rows -->
+            <div class="grid-item two-row-column">
+                <div class="row">
+                    <div class="col">
+                        <a href="/hotel/">
+                            <img src="{% static 'imgs/home/hotel.jpg' %}" alt="Image 1">  
+                              <div class="caption">
+                            <a href="/hotel/">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <a href="/travel/">
+                            <img src="{% static 'imgs/home/travel.jpg' %}" alt="Image 1">
+                                 <div class="caption">
+                            <!-- <p>Travel Package</p> -->
+                            <a href="/travel/">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <a href="/fligth/">
+                            <img src="{% static 'imgs/home/fligth.jpg' %}" alt="Image 1">                        <div class="caption">
+                            <!-- <p>Holiday Package</p> -->
+                            <a href="/holiday/">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   <!-- About Us Section -->
+   <section class="about-us">
+    <h2>Why Book with Us?</h2>
+    <div class="container-grid">
+        <div class="container-item">
+            <h3>Trusted Expertise</h3>
+            <p>With years of experience in the travel industry, we provide reliable and professional services to ensure your trip is seamless and enjoyable.</p>
+        </div>
+        <div class="container-item">
+            <h3>Exclusive Deals</h3>
+            <p>We offer competitive pricing and exclusive discounts on flights, hotels, and vacation packages, giving you the best value for your money.</p>
+        </div>
+        <div class="container-item">
+            <h3>24/7 Support</h3>
+            <p>Our dedicated support team is available around the clock to assist you with any inquiries or issues, ensuring peace of mind throughout your journey.</p>
+        </div>
+        <div class="container-item">
+            <h3>User-Friendly Booking</h3>
+            <p>Our platform is designed for simplicity and convenience, making it easy to plan, customize, and book your perfect trip in just a few clicks.</p>
+        </div>
+    </div>
+</section>
+<div class="image-grid">
+    <!-- Image 1 -->
+    <div class="image-container">
+        <a href="/explore/">
+            <img src="{% static 'imgs/home/che.jpg' %}" alt="Image 1">
+        </a>
+        <div class="image-description">Germany</div>
+        <div class="image-description1">Chelsea </div>
+        <div class="image-description2">$673</div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 JKTech. All Rights Reserved.</p>
-    </footer>
+    <!-- Image 2 -->
+    <div class="image-container">
+        <a href="/explore/">
+            <img src="{% static 'imgs/home/london.jpg' %}" alt="Image 2">
+        </a>
+        <div class="image-description">Germany</div>
+        <div class="image-description1">London</div>
+        <div class="image-description2">$654</div>
+    </div>
+
+    <!-- Image 3 -->
+    <div class="image-container">
+        <a href="/explore/">
+            <img src="{% static 'imgs/home/sidney.jpg' %}" alt="Image 3">
+        </a>
+        <div class="image-description">Australia</div>
+        <div class="image-description1">Sidney</div>
+        <div class="image-description2">$200</div>
+    </div>
+
+    <!-- Image 4 -->
+    <div class="image-container">
+        <a href="/explore/">
+            <img src="{% static 'imgs/home/kor.jpg' %}" alt="Image 4">
+        </a>
+        <div class="image-description">Korea</div>
+        <div class="image-description1">South Korea</div>
+        <div class="image-description2">$2000</div>
+        
+    </div>
+
+    <!-- Image 5 -->
+    <div class="image-container">
+        <a href="/explore/">
+            <img src="{% static 'imgs/home/ge.jpg' %}" alt="Image 5">
+        </a>
+        <div class="image-description">America</div>
+        <div class="image-description1">Atlanta</div>
+        <div class="image-description2">$1200</div>
+    </div>
+
+    <!-- Image 6 -->
+    <div class="image-container">
+        <a href="/explore/">
+            <img src="{% static 'imgs/home/kk.jpg' %}" alt="Image 6">
+        </a>
+        <div class="image-description">America</div>
+        <div class="image-description1">Georgia</div>
+        <div class="image-description2">$3400</div>
+
+
+
+    </div>
+
+    <!-- Image 7 -->
+    <div class="image-container">
+        <a href="https://example7.com">
+            <img src="{% static 'imgs/home/pre.jpg' %}" alt="Image 7">
+        </a>
+        <div class="image-description">South Africa</div>
+        <div class="image-description1">Pretoria</div>
+        <div class="image-description2">$900</div>
+    </div>
+
+    <!-- Image 8 -->
+    <div class="image-container">
+        <a href="https://example8.com">
+            <img src="{% static 'imgs/home/canada.jpg' %}" alt="Image 8">
+        </a>
+        <div class="image-description">Canada</div>
+        <div class="image-description1">Vancouver</div>
+        <div class="image-description2">$1000</div>
+    </div>
+</div>
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-container">
+        <!-- Quick Links Section -->
+        <div class="footer-column quick-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="/about/">About Us</a></li>
+                <li><a href="/services/">Services</a></li>
+                <li><a href="/contact/">Contact</a></li>
+                <li><a href="/explore/">Explore</a></li>
+             
+            </ul>
+        </div>
+
+        <!-- Social Links Section (Centered) -->
+        <div class="footer-column social-links">
+            <h3>objective</h3>
+            <ul>
+                {% comment %} <li>Streamline Booking Processes</li> {% endcomment %}
+                <li>Customer Experience</li>
+                <li>Advanced Technology</li>
+                <li>Data Security and Privacy</li>
+            </ul>
+        </div>
+
+        <!-- Follow Us Section (Aligned to Right) -->
+        <div class="footer-column follow-us">
+            <h3>Follow Us</h3>
+            <ul>
+                <li><a href="https://www.instagram.com/jairotech12/" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a></li>
+                <li><a href="https://twitter.com/KibetJairo89954" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i> Twitter</a></li>
+                <li><a href="https://facebook.com/jairo kibet" class="social-icon"><i class="fab fa-facebook"></i> facebook</a></li>
+                <li><a href="https://github.com/Jairo-Tech12" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
+
+            </ul>
+        </div>
+        <div class="footer-column follow-me">
+            <h3>Contact us</h3>
+            <ul>
+                <a href="https://wa.me/254724341480?" class="social-icon" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp
+                 <li><a href="mailto:jairokibet81@gmail.com" class="social-icon"><i class="fas fa-envelope"></i> Email</a></li>
+                <li><a href="tel:+254724341480" class="social-icon"><i class="fas fa-phone"></i> 0724341480</a></li>
+                {% comment %} <li><a href="#" class="social-icon"><i class="fab fa-"></i> Instagram</a></li> {% endcomment %}
+
+            </ul>
+        </div>
+    </div>
+    <div class="footer-content">
+        <img src="{% static 'imgs/kibet.jpg' %}" alt="Passport Image" class="passport-image">
+        <p>CEO</P>
+            <P>Jairo Kibet</p>
+    </div>
+
+    <!-- Footer Bottom (Copyright) -->
+    <div class="footer-bottom">
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+       
+        <p>&copy; 2024 Jairo Tech. All rights reserved.</p>
+    </div>
+</footer>
+
+
 </body>
 
 <style>
-    * {
+    body {
+        font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        background-color: #f7f7f7;
     }
 
-    body{
-        height: 100%;
-        font-family: Arial, sans-serif;
-        color: #333;
-        background-image: url("{% static 'imgs/london.jpg' %}");
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #1c1f26;
+        padding: 10px 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+        color: #f3730a;
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        margin: 0;
+        padding: 0;
+    }
+
+    ul a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+
+    ul a:hover {
+        color: #f3730a;
+    }
+
+    .dropdown {
+        display: none;
+        position: absolute;
+        top: 40px;
+        background-color: #1c1f26;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    li:hover .dropdown {
+        display: block;
+    }
+
+    .dropdown a {
+        display: block;
+        padding: 10px;
+        color: #fff;
+    }
+
+    /* Welcome Section */
+    .welcome {
+        background-image: url("{% static 'imgs/hom.jpg' %}");
         background-size: cover;
         background-position: center;
+        color: #06f526;
+        text-align: center;
+        padding: 50px 10px;
+        border-radius: 14px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin-top: 2%;
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+
+    .welcome h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+    }
+
+    .welcome p {
+        font-size: 20px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    /* Plan Your Trip Title */
+    .plan-your-trip {
+        text-align: center;
+        padding: 40px 0;
+    }
+
+    .plan-your-trip h2 {
+        font-size: 36px;
+        color: #333;
+        margin: 0;
+    }
+
+    /* Image Grid Section */
+    .image-grid-section {
+        padding: 40px 0;
+        background-color: #fff;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 2fr; /* 1 column for the first image, 2 columns for the second part */
+        gap: 30px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    /* First column with single image (400x300) */
+    .grid-item.single-image {
+        grid-row: span 2;
+        height: 300px;
+        position: relative;
+    }
+
+    .grid-item.single-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* This ensures the image covers the container */
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .caption {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .caption a {
+        color: #f3730a;
+        text-decoration: none;
+        font-weight: bold;
+        display: block;
+        margin-top: 1px;
+        margin-right: -2px;
+        padding: 1px 1px;
+        bottom: 1px;
+        right: 20%;
+
+    }
+
+    /* Two-row layout for the second column */
+    .grid-item.two-row-column {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        height: 300px; /* Make sure the second column matches the height of the first column */
+    }
+
+    .row {
+        display: flex;
+        gap: 10px;
+        height: 50%; /* Each row will take half of the height */
+    }
+
+    .col {
+        flex: 1;
+        height: 100%;
+        position: relative;
+    }
+
+    .col img {
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        object-fit: cover;
+    }
+
+    .col .caption {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .col .caption a {
+        color: #f3730a;
+        text-decoration: none;
+        font-weight: bold;
+        display: block;
+        margin-top: 5px;
+    }
+    .about-us {
+        text-align: center;
+        padding: 50px 20px;
+        background-color: #fff;
+    }
+
+    .about-us h2 {
+        font-size: 36px;
+        color: #333;
+        margin-bottom: 30px;
+    }
+
+    .container-grid {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        gap: 20px;
+        overflow-x: auto; /* Allows horizontal scrolling if necessary */
+        padding: 0;
+        max-width: 100%;
+    }
+
+    .container-item {
+        flex-shrink: 0;
+        width: 150px;
+        height: 150px;
+        background-color: #f7f7f7;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .container-item h3 {
+        font-size: 14px;
+        color: #f3730a;
+        margin-bottom: 10px;
+        text-decoration: underline;
+    }
+
+    .container-item p {
+        font-size: 12px;
+        color: #555;
+        line-height: 1.3;
+        transform: translateX(3%);
+    }
+
+    .container-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 768px) {
+        .container-grid {
+            gap: 15px;
+        }
+
+        .container-item {
+            width: 100px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .container-item {
+            width: 180px;
+        }
+    }
+    .image-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    /* Style for each image container */
+    .image-container {
+        text-align: center;
+    }
+
+    /* Style for images */
+    .image-container img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    /* Hover effect for images */
+    .image-container img:hover {
+        transform: scale(1.05);
+    }
+
+    /* Style for image description */
+    .image-description {
+        margin-top: 10px;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .image-description1 {
+        margin-top: 10px;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    .image-description2 {
+        margin-top: 10px;
+        font-size: 11px;
+       color: red;
+    }
+
+
+    /* Make the grid responsive */
+    @media (max-width: 768px) {
+        .image-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .image-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    /* Footer Styles */
+    .footer {
+        background-color: #1c1f26;
+        color: #ffffff;
+        padding: 40px 20px;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .footer-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr; /* 3 equal columns */
+        grid-gap: 15px;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px 0;
+        max-heigth: 700px;
+    }
+
+    .footer-column {
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .footer-column h3 {
+        font-size: 18px;
+        color: #f3730a;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        border-bottom: 2px solid #f3730a;
+        display: inline-block;
+        padding-bottom: 5px;
+    }
+
+    .footer-column ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
         display: flex;
         flex-direction: column;
     }
 
-    nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #1c1f26;
-            padding: 10px 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .logo {
-            color: #f3730a;
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-
-        ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-            margin: 0;
-            padding: 0;
-        }
-
-        ul a {
-            text-decoration: none;
-            color: #fff;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        ul a:hover {
-            color: #f3730a;
-        }
-
-        .dropdown {
-           display: inline-block;
-            display: none;
-            position: absolute;
-            top: 40px;
-            background-color: #1c1f26;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            padding: 10px;
-        }
-
-        li:hover .dropdown {
-            display: block;
-        }
-
-        .dropdown a {
-            display: block;
-            padding: 10px;
-            color: #fff;
-        }
-
-    .container {
-        max-width: 600px; /* Set a max width for the container */
-        margin: 0 auto; /* Center the container */
-        padding: 10px; /* Add padding */
-        background-color: rgba(255, 255, 255, 0.9); /* Light background */
-        border-radius: 8px; /* Rounded corners */
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-        opacity: o.1;
-
+    .footer-column ul li {
+        margin-bottom: 10px;
     }
 
-    .welcome-box {
-        padding: 5rem;
-        text-align: center;
+    .footer-column ul li a {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 14px;
+        transition: color 0.3s ease;
     }
 
-    .wrapper {
-        flex: 1;
+    .footer-column ul li a:hover {
+        color: #f3730a;
+    }
+
+    .footer-column p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .footer-column p a {
+        color: #f3730a;
+        text-decoration: none;
+    }
+
+    .footer-column p a:hover {
+        text-decoration: underline;
+    }
+
+    .social-links {
+        list-style: none;
+        padding: 0;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
-        min-height: calc(100vh - 150px);
-        padding-top: 60px; /* Add padding to prevent content from hiding behind the navbar */
     }
 
-    footer {
-        background-color: #121314;
-        color: #e7a71c;
-        text-align: center;
-        padding: 1rem;
-        width: 100%;
-        margin-bottom: 0;
+    .social-links li {
+        margin-bottom: 10px;
     }
+
+    .social-links li a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 14px;
+        transition: color 0.3s ease;
+    }
+
+    .social-links li a i {
+        margin-right: 8px;
+        font-size: 18px;
+    }
+
+    .social-links li a:hover {
+        color: #f3730a;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        margin-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding-top: 10px;
+        font-size: 14px;
+        color: white;
+    }
+    .footer-bottom a{
+             color: white;
+    }
+    .footer-bottom a:hover{
+        color: #f3730a;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+        .footer-container {
+            grid-template-columns: 1fr; /* Stack all columns */
+            gap: 20px;
+        }
+
+        .footer-column {
+            text-align: center;
+        }
+
+        .social-links {
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    .footer-content {
+        text-align: center; /* Centers the image in the footer */
+        padding: 20px;
+    }
+    
+    .passport-image {
+        width: 100px; /* Adjust size as needed */
+        height: 100px; /* Adjust size as needed */
+        border-radius: 50%; /* Makes the image round */
+        object-fit: cover; /* Ensures the image maintains its aspect ratio and covers the area */
+        border: 2px solid #fff; /* Optional: Add a border around the image */
+    
+    }
+
 </style>
+
 </html>

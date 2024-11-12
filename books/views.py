@@ -1,6 +1,8 @@
 from django.shortcuts import render ,redirect
 from django.http import HttpResponse
 from books.form import BookingForm
+from books.form import  ContactForm
+
 from django import forms
 
 def index(request):
@@ -11,9 +13,21 @@ def services(request):
 
 def about(request):
     return render( request,"book/about.html") 
+
      
 def contact(request):
-    return render( request,"book/contact.html")
+     submitted = False
+     if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            submitted = True  # Flag to trigger the popup
+            form = ContactForm()  # Reset form
+     else:
+        form = ContactForm()
+     return render(request, 'book/contact.html', {'form': form, 'submitted': submitted})
+    
+    
 
 def fligth(request):
     return render( request,"book/fligth.html")

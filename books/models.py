@@ -60,7 +60,20 @@ class travel(models.Model):
 def __str__(self):
     return f"{self.name} - {self.destination}"
 
+class message(models.Model):
+    GENDER_CHOICES = [
+        ('male', 'Male'),
+        ('female', 'Female'),
+        ('other', 'Other'),
+    ]
 
+    name = models.CharField(max_length=100)
+    phone = models.CharField(max_length=15)
+    gender = models.CharField(max_length=10, choices=GENDER_CHOICES)
+    message = models.TextField()
+
+    def __str__(self):
+        return f"{self.name} - {self.phone}"
 
 
 
