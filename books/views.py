@@ -11,7 +11,7 @@ def index(request):
 def services(request):
     return render( request,"book/services.html")  
 
-def about(request):
+def about (request):
     return render( request,"book/about.html") 
 
      
@@ -40,7 +40,7 @@ def travel(request):
 def hotel(request):
     return render( request,"book/hotel.html")
 
-def fligthbook(request):
+def fligth1(request):
     if request.method == 'POST':
         form = BookingForm(request.POST)
         if form.is_valid():
@@ -48,11 +48,11 @@ def fligthbook(request):
             return HttpResponse("Flight booked successfully!")  # You could also use redirect
         else:
             # Return the form with validation errors
-            return render(request, 'book/fligthbook.html', {'form': form})
+            return render(request, 'book/fligth1.html', {'form': form})
     else:
         # Render the empty form on GET request
         form = BookingForm()
-        return render(request, 'book/fligthbook.html', {'form': form})
+        return render(request, 'book/fligth1.html', {'form': form})
 
   
 def travel1(request):

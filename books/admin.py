@@ -7,7 +7,7 @@ from .models import message
 class BookingAdmin(admin.ModelAdmin):
     list_display = ('name', 'destination', 'email', 'phone_number', 'date')  # Display fields
     search_fields = ('name', 'destination', 'email')  # Searchable fields
-    list_filter = ('destination', 'date')  # Filterable fields
+    list_filter = ('name', )  # Filterable fields
 
   
 admin.site.register(fligth, BookingAdmin)

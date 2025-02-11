@@ -76,9 +76,18 @@ class message(models.Model):
         return f"{self.name} - {self.phone}"
 
 
-
-
-
+# class explore(models.model):
+#     image=models.imagefield(upload_to="explore/", verbose_name="explore image")
+#     title=models.charfield(max_length=100, verbose_name="title")
+#     date=models.DateField(auto_now_add=True, verbose_name="Dtae")
+     
+#     def image_tag(self):
+#         if self.image:
+#         #   return mark_safe(<img src="{self.image.url}" width="150 heigth="100"), 
+#                            return "No image"
+#                            def_str_(self)
+#                            return self.title
+                             
 
 
 

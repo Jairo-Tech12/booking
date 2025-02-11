@@ -21,3 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("books.urls")),
 ]
+admin.site.site_header= 'Jairo Admin'
+admin.site.site_title= 'Booking'
+admin.site.index_title="JKTECH"

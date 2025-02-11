@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block current_page %}services{% endblock current_page %}|Booking</title>
-      
+    <link rel="icon" type="image/x-icon" href="{% static 'imgs/home/favicon.ico.png' %}">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
 </head>
 <body>
 
@@ -72,9 +75,72 @@
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Jairo Tech. All rights reserved.</p>
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Quick Links Section -->
+            <div class="footer-column quick-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+    
+                    <li><a href="/services/">Services</a></li>
+                    <li><a href="/explore/">Explore</a></li>
+                    <li><a href="/about/">About Us</a></li>
+                    <li><a href="/contact/">Contact</a></li>
+                 
+                </ul>
+            </div>
+    
+            <!-- Social Links Section (Centered) -->
+            <div class="footer-column social-links">
+                <h3>objective</h3>
+                <ul>
+                    {% comment %} <li>Streamline Booking Processes</li> {% endcomment %}
+                    <li>Customer Experience</li>
+                    <li>Advanced Technology</li>
+                    <li>Data Security and Privacy</li>
+                    <li>Transparency</li>
+    
+                </ul>
+            </div>
+    
+            <!-- Follow Us Section (Aligned to Right) -->
+            <div class="footer-column follow-us">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="https://www.instagram.com/jairotech12/" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="https://twitter.com/KibetJairo89954" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="https://facebook.com/jairo kibet" class="social-icon"><i class="fab fa-facebook"></i> facebook</a></li>
+                    <li><a href="https://github.com/Jairo-Tech12" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a></li>
+    
+                </ul>
+            </div>
+            <div class="footer-column follow-me">
+                <h3>Contact us</h3>
+                <ul>
+                    <a href="https://wa.me/254724341480?" class="social-icon" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp
+                     <li><a href="mailto:jairokibet81@gmail.com" class="social-icon"><i class="fas fa-envelope"></i> Email</a></li>
+                    <li><a href="tel:+254724341480" class="social-icon"><i class="fas fa-phone"></i> 0724341480</a></li>
+                    {% comment %} <li><a href="#" class="social-icon"><i class="fab fa-"></i> Instagram</a></li> {% endcomment %}
+    
+                </ul>
+            </div>
+        </div>
+        <div class="footer-content">
+            <img src="{% static 'imgs/kibet.jpg' %}" alt="Passport Image" class="passport-image">
+            <p>CEO</P>
+                <P>Jairo Kibet</p>
+        </div>
+    
+        <!-- Footer Bottom (Copyright) -->
+        <div class="footer-bottom">
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+           
+            <p>&copy; 2024 Jairo Tech. All rights reserved.</p>
+        </div>
     </footer>
+    
+    
 
 </body>
 <style>
@@ -253,14 +319,7 @@
     }
 
     /* Footer */
-    footer {
-        background-color: #121314;
-        color: #e7a71c;
-        text-align: center;
-        padding: 1rem;
-        width: 100%;
-    }
-
+   
     /* Responsive Design */
     @media (max-width: 768px) {
         .service-card {
@@ -274,6 +333,148 @@
             width: 100%;
             margin: 0 0 20px 0;
         }
+    }
+    .footer {
+        background-color: #1c1f26;
+        color: #ffffff;
+        padding: 40px 20px;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .footer-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr; /* 3 equal columns */
+        grid-gap: 15px;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px 0;
+    }
+
+    .footer-column {
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .footer-column h3 {
+        font-size: 18px;
+        color: #f3730a;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        border-bottom: 2px solid #f3730a;
+        display: inline-block;
+        padding-bottom: 5px;
+    }
+
+    .footer-column ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-column ul li {
+        margin-bottom: 10px;
+    }
+
+    .footer-column ul li a {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 14px;
+        transition: color 0.3s ease;
+    }
+
+    .footer-column ul li a:hover {
+        color: #f3730a;
+    }
+
+    .footer-column p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .footer-column p a {
+        color: #f3730a;
+        text-decoration: none;
+    }
+
+    .footer-column p a:hover {
+        text-decoration: underline;
+    }
+
+    .social-links {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .social-links li {
+        margin-bottom: 10px;
+    }
+
+    .social-links li a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 14px;
+        transition: color 0.3s ease;
+    }
+
+    .social-links li a i {
+        margin-right: 8px;
+        font-size: 18px;
+    }
+
+    .social-links li a:hover {
+        color: #f3730a;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        margin-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding-top: 10px;
+        font-size: 14px;
+        color: white;
+    }
+    .footer-bottom a{
+             color: white;
+    }
+    .footer-bottom a:hover{
+        color: #f3730a;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+        .footer-container {
+            grid-template-columns: 1fr; /* Stack all columns */
+            gap: 20px;
+        }
+
+        .footer-column {
+            text-align: center;
+        }
+
+        .social-links {
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    .footer-content {
+        text-align: center; /* Centers the image in the footer */
+        padding: 20px;
+    }
+    
+    .passport-image {
+        width: 100px; /* Adjust size as needed */
+        height: 100px; /* Adjust size as needed */
+        border-radius: 50%; /* Makes the image round */
+        object-fit: cover; /* Ensures the image maintains its aspect ratio and covers the area */
+        border: 2px solid #fff; /* Optional: Add a border around the image */
+    
     }
 </style>
 </html>
