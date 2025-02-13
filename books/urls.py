@@ -2,6 +2,8 @@ from django.urls import path
 from . import views as v
 
 
+
+
 urlpatterns = [
     path("", v.index),
     path("services/", v.services),
@@ -15,4 +17,7 @@ urlpatterns = [
     path("travel1/", v.travel1),
     path("wow/", v.wow),
     path("explore/", v.explore),
+ 
+    
+    
 ]

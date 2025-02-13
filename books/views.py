@@ -2,6 +2,7 @@ from django.shortcuts import render ,redirect
 from django.http import HttpResponse
 from books.form import BookingForm
 from books.form import  ContactForm
+from .models import Explore
 
 from django import forms
 
@@ -91,3 +92,7 @@ def wow(request):
 
 def explore(request):
     return render( request,"book/explore.html")
+
+def explore_list(request):
+    explores = Explore.objects.all()  # Fetch all images from DB
+    return render(request, 'explore_list.html', {'explores': explores})

@@ -74,19 +74,25 @@ class message(models.Model):
 
     def __str__(self):
         return f"{self.name} - {self.phone}"
-
-
-# class explore(models.model):
-#     image=models.imagefield(upload_to="explore/", verbose_name="explore image")
-#     title=models.charfield(max_length=100, verbose_name="title")
-#     date=models.DateField(auto_now_add=True, verbose_name="Dtae")
      
-#     def image_tag(self):
-#         if self.image:
-#         #   return mark_safe(<img src="{self.image.url}" width="150 heigth="100"), 
-#                            return "No image"
-#                            def_str_(self)
-#                            return self.title
+ 
+
+
+
+
+class Explore(models.Model):
+    country = models.CharField(max_length=100, help_text="Country Name", default="Unknown Country")
+    place_name = models.CharField(max_length=150, help_text="Name of the place", default="Unknown place")
+    price = models.DecimalField(max_digits=6, decimal_places=2, help_text="Enter price in USD", default=0.00)
+    image = models.ImageField(upload_to="destinations/", help_text="Upload an image")
+
+    def __str__(self):
+        return f"{self.place_name}, {self.country}"
+
+
+
+
+
                              
 
 
